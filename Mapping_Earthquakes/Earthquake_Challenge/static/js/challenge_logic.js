@@ -44,7 +44,6 @@ let allEarthquakes = new L.LayerGroup();
 let tectonicPlates = new L.LayerGroup();
 let majorEarthquakes = new L.LayerGroup();
 
-
 // 2. Add a reference to the tectonic plates group to the overlays object.
 let overlays = {
   "Earthquakes": allEarthquakes,
@@ -162,7 +161,6 @@ function getColor(magnitude) {
 //  after the marker has been created and styled.
   L.geoJson(data, {
     // We turn each feature into a circleMarker on the map.
-    
     pointToLayer: function(feature, latlng) {
                 console.log(data);
                 return L.circleMarker(latlng);
@@ -176,8 +174,6 @@ function getColor(magnitude) {
         // 9. Close the braces and parentheses for the major earthquake data.
         majorEarthquakes.addTo(map);
     });
-
-
 
   // Here we create a legend control object.
 let legend = L.control({
@@ -219,8 +215,6 @@ legend.onAdd = function() {
         fillOpacity: 1,
         fillColor: getColor(feature.properties.mag),
         color: "#000000",
-        //radius: getRadius(feature.properties.mag),
-        //stroke: true,
         weight: 0.5
       };
     }
